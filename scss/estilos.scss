@@ -1,0 +1,12 @@
+// estilos.scss  ->  se compila a  scss/dist/estilos.css
+// Es el CSS "madre": las páginas solo cargan este y él trae todo lo demás.
+// Los @import url(...) NO los procesa Sass: se quedan tal cual en el CSS y el navegador los carga.
+// (las rutas son relativas a scss/dist/, donde queda compilado)
+
+/* Investigacion de css madre */
+@import url("base.css");
+@import url("encabezado.css");
+@import url("piePG.css");
+@import url("componentes.css");
+@import url("colores.css");              /* viene de scss/colores.scss */
+@import url("../../less/dist/fotos.css"); /* viene de less/fotos.less */

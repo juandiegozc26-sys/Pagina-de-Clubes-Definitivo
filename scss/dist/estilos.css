@@ -1,0 +1,7 @@
+/* Investigacion de css madre */
+@import url("base.css");
+@import url("encabezado.css");
+@import url("piePG.css");
+@import url("componentes.css");
+@import url("colores.css");              /* viene de scss/colores.scss */
+@import url("../../less/dist/fotos.css"); /* viene de less/fotos.less */

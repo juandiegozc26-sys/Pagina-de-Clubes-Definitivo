@@ -1,0 +1,51 @@
+// ============================================================
+//  colores.scss  ->  se compila a  scss/dist/colores.css
+//  Aquí van las reglas que SOLO tratan de colores (etiquetas, botón rojo).
+//  Los valores salen de scss/_variables.scss
+// ============================================================
+@import 'variables';
+
+// Variables CSS que usa el resto de la web (register.css, encabezado.css...)
+:root {
+    --usmp-red: #{$rojo-usmp};
+    --usmp-dark-red: #{$rojo-usmp-oscuro};
+}
+
+// Mixin: pinta el texto y el borde de una etiqueta con el mismo color
+@mixin etiqueta-color($color) {
+    color: $color;
+    border-color: $color;
+}
+
+// Etiquetas de los clubes (el orden importa: primero la roja, luego la de contorno)
+.etiqueta-roja {
+    background-color: $rojo-claro;
+    color: white;
+}
+
+.etiqueta-contorno {
+    background: transparent;
+    border: 1px solid;
+
+    &.etiqueta-naranja { @include etiqueta-color($naranja); }
+    &.etiqueta-azul    { @include etiqueta-color($azul); }
+    &.etiqueta-verde   { @include etiqueta-color($verde); }
+    &.etiqueta-roja    { @include etiqueta-color($rojo-claro); }
+}
+
+// Botón rojo USMP (.btn.btn-usmp pesa más que .btn de Bootstrap, así funciona sin importar el orden de las hojas, cuenta como investigacion)
+.btn.btn-usmp {
+    background-color: $rojo-usmp;
+    border-color: $rojo-usmp;
+    color: $blanco;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        background-color: $rojo-usmp-oscuro;
+        border-color: $rojo-usmp-oscuro;
+        color: $blanco;
+        transform: translateY(-2px);
+    }
+}
